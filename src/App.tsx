@@ -1,6 +1,8 @@
+(window as any).XRWebGLBinding = undefined //fez o objeto 3D voltar renderizar na camera normal
 import { Canvas } from "@react-three/fiber";
 import { XR, createXRStore } from "@react-three/xr";
 import { SquareView } from "./viewers/squareView";
+
 const store = createXRStore();
 
 export default function App() {
