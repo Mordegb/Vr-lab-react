@@ -3,7 +3,6 @@ import { Group, Matrix4 } from "three";
 import { XRDomOverlay, useXRHitTest } from "@react-three/xr";
 import { Square } from "../components/3DItens/square";
 import { usePinchScale } from "../hooks/usePinchScale";
-import { XRHitTest } from "@react-three/xr";
 const matrix = new Matrix4();
 
 export function SquareView() {
