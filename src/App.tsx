@@ -2,6 +2,7 @@
 import { Canvas } from "@react-three/fiber";
 import { XR, createXRStore } from "@react-three/xr";
 import { SquareView } from "./viewers/squareView";
+import { PyramidView } from "./viewers/pyramidView";
 
 const store = createXRStore();
 
@@ -16,7 +17,8 @@ export default function App() {
       </button>
       <Canvas style={{ position: "fixed", inset: 0 }}>
         <XR store={store}>
-          <SquareView></SquareView>
+          {/* <SquareView></SquareView> */}
+          <PyramidView></PyramidView>
         </XR>
       </Canvas>
     </>

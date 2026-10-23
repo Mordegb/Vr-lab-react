@@ -32,7 +32,7 @@ export function SquareView() {
         {!fixed && (
           <mesh rotation-x={-Math.PI / 2}>
             <ringGeometry args={[0.12, 0.15, 32]} />
-            <meshBasicMaterial color="white" />
+            <meshBasicMaterial color="lime" />
           </mesh>
         )}
         <Square scale={scale} position={[0, 0.1 * scale, 0]} />
