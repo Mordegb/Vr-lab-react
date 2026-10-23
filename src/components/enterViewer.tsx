@@ -1,12 +1,12 @@
-import { XR, type XRStore } from "@react-three/xr";
+import { createXRStore, XR} from "@react-three/xr";
 import { PyramidView } from "../viewers/pyramidView";
 import { SquareView } from "../viewers/squareView";
 import { Canvas } from "@react-three/fiber";
+import { useState } from "react";
 
 interface enterViewerProps {
   geometricForm: "square" | "pyramid";
   text: string;
-  store: XRStore;
 }
 
 function viewerCase(form: string) {
@@ -19,7 +19,8 @@ function viewerCase(form: string) {
   }
 }
 
-export function EnterViewer({ text, geometricForm, store }: enterViewerProps) {
+export function EnterViewer({ text, geometricForm}: enterViewerProps) {
+      const [store] = useState(() => createXRStore());
   return (
     <>
       <button
