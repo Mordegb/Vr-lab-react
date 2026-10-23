@@ -2,12 +2,12 @@ import { useRef, useState } from "react";
 import { Group, Matrix4 } from "three";
 import { XRDomOverlay, useXRHitTest } from "@react-three/xr";
 import { Pyramid } from "../components/3DItens/pyramid";
-import { usePinchScale } from "../hooks/usePinchScale";
+import { usePinchRotate } from "../hooks/userPinchRotate";
 const matrix = new Matrix4();
 
 export function PyramidView() {
-  const [scale, handlers] = usePinchScale();
   const [fixed, setFixed] = useState(false);
+  const [scale, orientation, handlers] = usePinchRotate();
   const group = useRef<Group>(null!);
   const posicion = useRef(true);
 
@@ -35,7 +35,7 @@ export function PyramidView() {
             <meshBasicMaterial color="white" />
           </mesh>
         )}
-        <Pyramid scale={scale} position={[0, 0.1 * scale, 0]} />
+       <Pyramid scale={scale} orientation={orientation} position={[0, 0.1 * scale, 0]} />
       </group>
 
       <XRDomOverlay style={{ width: "100%", height: "100%" }}>
