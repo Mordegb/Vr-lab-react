@@ -3,6 +3,7 @@ import { Group, Matrix4 } from "three";
 import { XRDomOverlay, useXRHitTest } from "@react-three/xr";
 import { Pyramid } from "../components/3DItens/pyramid";
 import { usePinchRotate } from "../hooks/userPinchRotate";
+import { ArFixedButton } from "../components/arFixedButton/arFixedButton";
 const matrix = new Matrix4();
 
 export function PyramidView() {
@@ -35,7 +36,11 @@ export function PyramidView() {
             <meshBasicMaterial color="white" />
           </mesh>
         )}
-       <Pyramid scale={scale} orientation={orientation} position={[0, 0.1 * scale, 0]} />
+        <Pyramid
+          scale={scale}
+          orientation={orientation}
+          position={[0, 0.1 * scale, 0]}
+        />
       </group>
 
       <XRDomOverlay style={{ width: "100%", height: "100%" }}>
@@ -43,18 +48,7 @@ export function PyramidView() {
           {...handlers}
           style={{ position: "absolute", inset: 0, touchAction: "none" }}
         />
-        <button
-          onClick={altern}
-          style={{
-            position: "absolute",
-            bottom: 30,
-            left: "50%",
-            transform: "translateX(-50%)",
-            padding: "14px 24px",
-          }}
-        >
-          {fixed ? "Mover de novo" : "Fixar aqui"}
-        </button>
+        <ArFixedButton alternState={altern} fixedState={fixed}></ArFixedButton>
       </XRDomOverlay>
     </>
   );

@@ -3,6 +3,7 @@ import { Group, Matrix4 } from "three";
 import { XRDomOverlay, useXRHitTest } from "@react-three/xr";
 import { Square } from "../components/3DItens/square";
 import { usePinchScale } from "../hooks/usePinchScale";
+import { ArFixedButton } from "../components/arFixedButton/arFixedButton";
 const matrix = new Matrix4();
 
 export function SquareView() {
@@ -44,18 +45,7 @@ export function SquareView() {
           {...handlers}
           style={{ position: "absolute", inset: 0, touchAction: "none" }}
         />
-        <button
-          onClick={altern}
-          style={{
-            position: "absolute",
-            bottom: 30,
-            left: "50%",
-            transform: "translateX(-50%)",
-            padding: "14px 24px",
-          }}
-        >
-          {fixed ? "Mover de novo" : "Fixar aqui"}
-        </button>
+       <ArFixedButton alternState={altern} fixedState={fixed} ></ArFixedButton>
       </XRDomOverlay>
     </>
   );

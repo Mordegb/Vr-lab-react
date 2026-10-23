@@ -1,26 +1,14 @@
-(window as any).XRWebGLBinding = undefined //fez o objeto 3D voltar renderizar na camera normal
-import { Canvas } from "@react-three/fiber";
-import { XR, createXRStore } from "@react-three/xr";
-import { SquareView } from "./viewers/squareView";
-import { PyramidView } from "./viewers/pyramidView";
-
-const store = createXRStore();
+(window as any).XRWebGLBinding = undefined; //fez o objeto 3D voltar renderizar na camera normal
+import { EnterViewer } from "./components/EnterViewer/enterViewer";
+import "./App.css";
 
 export default function App() {
   return (
     <>
-      <button
-        onClick={() => store.enterAR()}
-        style={{ position: "fixed", zIndex: 10, top: 20, left: 20 }}
-      >
-        Iniciar RA
-      </button>
-      <Canvas style={{ position: "fixed", inset: 0 }}>
-        <XR store={store}>
-          {/* <SquareView></SquareView> */}
-          <PyramidView></PyramidView>
-        </XR>
-      </Canvas>
+      <div className="viewers">
+        <EnterViewer geometricForm="square" text="Ver cubo" />
+        <EnterViewer geometricForm="pyramid" text="Ver piramide" />
+      </div>
     </>
   );
 }
