@@ -3,6 +3,7 @@ import { Group, Matrix4 } from "three";
 import { XRDomOverlay, useXRHitTest } from "@react-three/xr";
 import { Square } from "../components/3DItens/square";
 import { usePinchScale } from "../hooks/usePinchScale";
+import { XRHitTest } from "@react-three/xr";
 const matrix = new Matrix4();
 
 export function SquareView() {
@@ -32,7 +33,7 @@ export function SquareView() {
         {!fixed && (
           <mesh rotation-x={-Math.PI / 2}>
             <ringGeometry args={[0.12, 0.15, 32]} />
-            <meshBasicMaterial color="white" />
+            <meshBasicMaterial color="lime" />
           </mesh>
         )}
         <Square scale={scale} position={[0, 0.1 * scale, 0]} />

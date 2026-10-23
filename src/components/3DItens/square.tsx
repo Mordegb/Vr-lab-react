@@ -22,7 +22,7 @@ export function Square({ scale = 1, position = [0, 0, 0] }: { scale?: number; po
       onPointerOut={() => setHover(false)}
     >
       <boxGeometry args={[0.2, 0.2, 0.2]} />
-      <meshStandardMaterial color={active ? "blue" : hover ? "pink" : "red"} />
+      <meshStandardMaterial color={active ? "#fa0f3a" : hover ? "pink" : "#0f85fa"} />
     </mesh>
   );
 }
