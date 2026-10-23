@@ -1,0 +1,27 @@
+.container {
+    flex: 1;
+    min-width: 0;
+}
+
+.card {
+    width: 100%;
+    padding: 16px 8px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.card:active {
+    background-color: rgb(227, 225, 225)
+}
+
+.canvas {
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1
+}
