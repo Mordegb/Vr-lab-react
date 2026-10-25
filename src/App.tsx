@@ -8,6 +8,7 @@ export default function App() {
       <div className="viewers">
         <EnterViewer geometricForm="square" text="Ver cubo" />
         <EnterViewer geometricForm="pyramid" text="Ver piramide" />
+        <EnterViewer geometricForm="copyMachine" text="ver copiadora"/>
       </div>
     </>
   );
