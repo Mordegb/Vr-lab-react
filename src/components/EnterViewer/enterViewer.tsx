@@ -4,9 +4,10 @@ import { SquareView } from "../../viewers/squareView";
 import { Canvas } from "@react-three/fiber";
 import { useState } from "react";
 import "./enterViewer.css";
+import { CopyMachineView } from "../../viewers/copyMachineView";
 
 interface enterViewerProps {
-  geometricForm: "square" | "pyramid";
+  geometricForm: "square" | "pyramid" | "copyMachine";
   text: string;
 }
 
@@ -17,6 +18,9 @@ function viewerCase(form: string) {
 
     case "pyramid":
       return <PyramidView></PyramidView>;
+    
+    case "copyMachine":
+      return <CopyMachineView></CopyMachineView>
   }
 }
 
