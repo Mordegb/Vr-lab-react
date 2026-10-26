@@ -33,7 +33,7 @@ export function CopyMachineView() {
         {!fixed && (
           <mesh rotation-x={-Math.PI / 2}>
             <ringGeometry args={[0.12, 0.15, 32]} />
-            <meshBasicMaterial color={"#00ff5ea3"} />
+            <meshBasicMaterial color={"#00ff5e"} />
           </mesh>
         )}
         <Suspense fallback={null}>
