@@ -3,7 +3,8 @@ import { useGLTF } from "@react-three/drei";
 import { Box3 , Vector3 } from "three";
 import type { Vector3Tuple } from "three";
 
-const MODEL_URL = "/models/copyMachine/machine.gltf";
+// const MODEL_URL = "/models/copyMachine/machine.gltf";
+const MODEL_URL = "/models/CAR_SUV/SUV.glb"; // modelo do carro
 
 const ALTURA_REAL = 0.5;
 export function CopyMachine({scale = 1 , position = [0,0,0]}: {scale?:number; position?: Vector3Tuple}){
