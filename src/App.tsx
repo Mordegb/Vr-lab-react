@@ -9,6 +9,7 @@ export default function App() {
         <EnterViewer geometricForm="square" text="Ver cubo" />
         <EnterViewer geometricForm="pyramid" text="Ver piramide" />
         <EnterViewer geometricForm="copyMachine" text="ver copiadora"/>
+        <EnterViewer geometricForm="anakinPod" text="se liga"/>
       </div>
     </>
   );
