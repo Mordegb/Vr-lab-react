@@ -5,9 +5,10 @@ import { Canvas } from "@react-three/fiber";
 import { useState } from "react";
 import "./enterViewer.css";
 import { CopyMachineView } from "../../viewers/copyMachineView";
+import { PodAnakinView } from "../../viewers/podAnakinView";
 
 interface enterViewerProps {
-  geometricForm: "square" | "pyramid" | "copyMachine";
+  geometricForm: "square" | "pyramid" | "copyMachine" | "anakinPod";
   text: string;
 }
 
@@ -18,9 +19,12 @@ function viewerCase(form: string) {
 
     case "pyramid":
       return <PyramidView></PyramidView>;
-    
+
     case "copyMachine":
-      return <CopyMachineView></CopyMachineView>
+      return <CopyMachineView></CopyMachineView>;
+
+    case "anakinPod":
+      return <PodAnakinView></PodAnakinView>;
   }
 }
 
@@ -28,7 +32,6 @@ export function EnterViewer({ text, geometricForm }: enterViewerProps) {
   const [store] = useState(() => createXRStore());
   return (
     <div className="container">
-
       <button className="card" onClick={() => store.enterAR()}>
         {text}
       </button>
